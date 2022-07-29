@@ -26,25 +26,25 @@ const Reservaciones = () => {
 
   return (
     <>
-      <header>
-        <h1>Reservaciones</h1>
-      </header>
+    <header>
+      <h1>Reservaciones</h1>
+    </header>
       <main>
         <article>
           <form>
             <div className="containermb-3 mt-5">
               <label htmlFor="nombre">Nombre completo</label>
               <input
-                id="nombre validationDefault01"
+                id="nombre"
                 type="text"
                 placeholder="Nombre(s) Apellidos"
                 autoComplete="off"
                 className="form-control"
                 value={form.nombre}
                 onChange={(e) => {
-                  setForm({ ...form, nombre: e.target.value });
+                  setForm({ ...form, nombre: e.target.value});
                 }}
-                required
+                
               />
             </div>
             <div className="mb-3">
@@ -111,7 +111,7 @@ const Reservaciones = () => {
       <section>
         <ModalReserva id="reservaExitosa" />
       </section>
-      <footer className='mt-5'>
+      <footer>
         <Footer />
       </footer>
     </>

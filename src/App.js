@@ -3,7 +3,6 @@ import AppRouter from './routers/AppRouter';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.min.js';
-import './styles/style.css';
 
 
 const App = () => {

@@ -1,11 +1,16 @@
 import React from 'react';
 import { NavLink } from "react-router-dom";
 
+// Importacion de imagenes
+// import Logo from "../images/logo-pizza-1.jpg";
+
 const NavBar = () => {
   return (
     <nav className="navbar navbar-dark bg-dark fixed-top">
       <div className="container-fluid">
-        <a className="navbar-brand" href="/">Restaurante App</a>
+        <div>
+          <NavLink className="navbar-brand img-fluid" to="/"> Pizza Prime</NavLink>
+        </div>
         <button className="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar">
           <span className="navbar-toggler-icon" />
         </button>

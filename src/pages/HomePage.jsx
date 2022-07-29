@@ -1,8 +1,8 @@
 import React from 'react';
-import { NavLink } from "react-router-dom";
 
 // Importacion de componentes
 import Footer from '../components/Footer';
+import Formulario from '../components/Formulario';
 
 // Importacion de imagenes
 import Pizza1 from '../images/pizza-1.jpg';
@@ -12,9 +12,6 @@ import PizzaHorno1 from '../images/pizza-horno-1.jpg';
 const HomePage = () => {
   return (
     <>
-      <header>
-        <h1>Home Page</h1>
-      </header>
       <main>
         <article>
           <div id="carouselExampleCaptions" className="carousel slide d-flex justify-content-center" data-bs-ride="false">
@@ -27,52 +24,22 @@ const HomePage = () => {
               <div className="carousel-item active">
                 <img src={Pizza1} className="d-block w-100" alt="pizza-1" />
                 <div className="carousel-caption d-none d-md-block">
-                  <h5>First slide label</h5>
-                  <p>Some representative placeholder content for the first slide.</p>
-                  <button type="submit" className="btn btn-success">
-                    <NavLink
-                      to="/reservaciones"
-                      aria-current="page"
-                      className={({ isActive }) =>
-                        isActive ? "nav-link active" : "nav-link"}
-                    >
-                      Reservar
-                    </NavLink>
-                  </button>
+                  <h2>Horarios</h2>
+                  <h4>Martes a Domingo de 1:00 pm a 11:00 pm.</h4>
                 </div>
               </div>
               <div className="carousel-item">
                 <img src={Restaurant1} className="d-block w-100" alt="restaurant-1" />
                 <div className="carousel-caption d-none d-md-block">
-                  <h5>Second slide label</h5>
-                  <p>Some representative placeholder content for the second slide.</p>
-                  <button type="submit" className="btn btn-success">
-                    <NavLink
-                      to="/reservaciones"
-                      aria-current="page"
-                      className={({ isActive }) =>
-                        isActive ? "nav-link active" : "nav-link"}
-                    >
-                      Reservar
-                    </NavLink>
-                  </button>
+                  <h2>Ubicación</h2>
+                  <h4>Polanco 405, Ciudad de México.</h4>
                 </div>
               </div>
               <div className="carousel-item">
                 <img src={PizzaHorno1} className="d-block w-100" alt="pizza-horno-1" />
                 <div className="carousel-caption d-none d-md-block">
-                  <h5>Third slide label</h5>
-                  <p>Some representative placeholder content for the third slide.</p>
-                  <button type="submit" className="btn btn-success">
-                    <NavLink
-                      to="/reservaciones"
-                      aria-current="page"
-                      className={({ isActive }) =>
-                        isActive ? "nav-link active" : "nav-link"}
-                    >
-                      Reservar
-                    </NavLink>
-                  </button>
+                  <h2>Pizzas al Horno</h2>
+                  <h4>Pizzas hechas en horno de leña.</h4>
                 </div>
               </div>
             </div>
@@ -88,7 +55,13 @@ const HomePage = () => {
 
         </article>
       </main>
-      <Footer />
+      <section>
+        <Formulario />
+      </section>
+      <footer>
+        <Footer />
+      </footer>
+      
     </>
   );
 };

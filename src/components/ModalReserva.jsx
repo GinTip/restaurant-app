@@ -8,23 +8,23 @@ const ModalReserva = () => {
         <div className="modal-dialog modal-dialog-centered">
           <div className="modal-content">
             <div className="modal-header">
-              <h5 className="modal-title" id="reservaExitosa">Reservación exitosa!</h5>
+              <h4 className="modal-title" id="reservaExitosa">Reservación exitosa!</h4>
               <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close" />
             </div>
             <div className="modal-body">
-              Tu reserva se ha realizado con éxito.
+              <h2>Tu reserva se ha realizado con éxito!</h2>
             </div>
             <div className="modal-footer">
               <button type="button" className="btn btn-secondary" data-bs-dismiss="modal">Hacer otra reserva</button>
               <button type="button" className="btn btn-warning" data-bs-dismiss="modal">
-              <NavLink
-                      to="/"
-                      aria-current="page"
-                      className={({ isActive }) =>
-                        isActive ? "nav-link active" : "nav-link"}
-                    >
-                      Página principal
-                    </NavLink>
+                <NavLink
+                  to="/"
+                  aria-current="page"
+                  className={({ isActive }) =>
+                    isActive ? "nav-link active" : "nav-link"}
+                >
+                  Página principal
+                </NavLink>
               </button>
             </div>
           </div>

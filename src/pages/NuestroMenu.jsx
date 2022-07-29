@@ -1,18 +1,21 @@
 import React from 'react';
 import Footer from '../components/Footer';
 
+// Importacion de imagenes
+import Logo from '../images/logo-pizza-1.jpg';
+
 const NuestroMenu = () => {
   return (
     <>
       <header>
-        <h1>Nuestro Menú</h1>
+        <h1>Próximamente</h1>
       </header>
       <main>
-        <article>
-          <p>Esta es la pagina de nuestro menú</p>
-        </article>
+        <img src={Logo} className="img-fluid rounded mx-auto d-block" alt="logo-pizza" />
       </main>
-      <Footer />
+      <footer>
+        <Footer />
+      </footer>
     </>
   );
 };
