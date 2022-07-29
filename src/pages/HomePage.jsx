@@ -1,6 +1,8 @@
 import React from 'react';
-import Footer from '../components/Footer';
 import { NavLink } from "react-router-dom";
+
+// Importacion de componentes
+import Footer from '../components/Footer';
 
 // Importacion de imagenes
 import Pizza1 from '../images/pizza-1.jpg';

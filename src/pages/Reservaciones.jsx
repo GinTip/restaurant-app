@@ -4,8 +4,10 @@ import {
   collection,
   addDoc,
 } from "firebase/firestore";
-import Footer from '../components/Footer';
 
+// Importacion de componetes
+import Footer from '../components/Footer';
+import ModalReserva from "../components/ModalReserva";
 
 const initialForm = {
   nombre: "",
@@ -33,15 +35,16 @@ const Reservaciones = () => {
             <div className="containermb-3 mt-5">
               <label htmlFor="nombre">Nombre completo</label>
               <input
-                id="nombre"
+                id="nombre validationDefault01"
                 type="text"
-                placeholder="Nombre"
+                placeholder="Nombre(s) Apellidos"
                 autoComplete="off"
                 className="form-control"
                 value={form.nombre}
                 onChange={(e) => {
                   setForm({ ...form, nombre: e.target.value });
                 }}
+                required
               />
             </div>
             <div className="mb-3">
@@ -49,13 +52,14 @@ const Reservaciones = () => {
               <input
                 id="email"
                 type="textarea"
-                placeholder="email"
+                placeholder="ejemplo@email.com"
                 autoComplete="off"
                 className="form-control"
                 value={form.email}
                 onChange={(e) => {
                   setForm({ ...form, email: e.target.value });
                 }}
+                required
               />
             </div>
             <div className="mb-3">
@@ -63,13 +67,14 @@ const Reservaciones = () => {
               <input
                 id="telefono"
                 type="number"
-                placeholder="telefono"
+                placeholder="Ej. 2222140135"
                 autoComplete="off"
                 className="form-control"
                 value={form.telefono}
                 onChange={(e) => {
                   setForm({ ...form, telefono: e.target.value });
                 }}
+                required
               />
             </div>
             <div className="mb-3">
@@ -77,13 +82,14 @@ const Reservaciones = () => {
               <input
                 id="comentario"
                 type="text"
-                placeholder="comentario"
+                placeholder="Ej. Alergia a algún alimento"
                 autoComplete="off"
                 className="form-control"
                 value={form.comentario}
                 onChange={(e) => {
                   setForm({ ...form, comentario: e.target.value });
                 }}
+                required
               />
             </div>
           </form>
@@ -91,14 +97,19 @@ const Reservaciones = () => {
       </main>
       <section>
         <article>
-            <button
-              type="submit"
-              className="btn btn-primary"
-              onClick={crearReserva}
-            >
-              Reservar
-            </button>
+          <button
+            type="submit"
+            className="btn btn-success"
+            onClick={crearReserva}
+            data-bs-toggle="modal"
+            data-bs-target="#reservaExitosa"
+          >
+            Reservar
+          </button>
         </article>
+      </section>
+      <section>
+        <ModalReserva id="reservaExitosa" />
       </section>
       <footer className='mt-5'>
         <Footer />
