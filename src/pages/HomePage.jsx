@@ -23,7 +23,7 @@ const HomePage = () => {
             </div>
             <div className="carousel-inner">
               <div className="carousel-item active">
-                <img src={Pizza1} className="img-fluid img-thumbnail" alt="pizza-1" />
+                <img src={Pizza1} className="d-block w-100" alt="pizza-1" />
                 <div className="carousel-caption d-none d-md-block">
                   <h5>First slide label</h5>
                   <p>Some representative placeholder content for the first slide.</p>
@@ -40,7 +40,7 @@ const HomePage = () => {
                 </div>
               </div>
               <div className="carousel-item">
-                <img src={Restaurant1} className="img-fluid img-thumbnail" alt="restaurant-1" />
+                <img src={Restaurant1} className="d-block w-100" alt="restaurant-1" />
                 <div className="carousel-caption d-none d-md-block">
                   <h5>Second slide label</h5>
                   <p>Some representative placeholder content for the second slide.</p>
@@ -57,7 +57,7 @@ const HomePage = () => {
                 </div>
               </div>
               <div className="carousel-item">
-                <img src={PizzaHorno1} className="img-fluid img-thumbnail" alt="pizza-horno-1" />
+                <img src={PizzaHorno1} className="d-block w-100" alt="pizza-horno-1" />
                 <div className="carousel-caption d-none d-md-block">
                   <h5>Third slide label</h5>
                   <p>Some representative placeholder content for the third slide.</p>

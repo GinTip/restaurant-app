@@ -18,7 +18,7 @@ const AppRouter = () => {
   return (
     <Router>
       <NavBar/>
-      <div>
+      <div className='container mt-5 p-5'>
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/nosotros" element={<AboutPage />} /> 
