@@ -3,6 +3,7 @@ import { db } from "../firebase/firebase";
 import {
   collection,
   addDoc,
+  getDocs,
 } from "firebase/firestore";
 
 // Importacion de componetes
@@ -11,6 +12,8 @@ import ModalReserva from "../components/ModalReserva";
 
 const initialForm = {
   nombre: "",
+  fecha: "",
+  hora: "",
   email: "",
   telefono: "",
   comentario: "",
@@ -18,21 +21,36 @@ const initialForm = {
 
 const Reservaciones = () => {
   const [form, setForm] = useState(initialForm);
+  const [reservas, setReservas] = useState([]);
 
-  const crearReserva = () => {
+  const crearReserva = async () => {
     const reserva = collection(db, "reservaciones");
-    addDoc(reserva, form);
+    await addDoc(reserva, form);
+    await obtenerReservas();
+  };
+
+  const obtenerReservas = async () => {
+    const resp = await getDocs(collection(db, "reservaciones"));
+    const reservas = resp.docs.map((reserva) => ({
+      id: reserva.id,
+      ...reserva.data(),
+    }));
+
+    setReservas(reservas);
   };
 
   return (
     <>
-    <header>
-      <h1>Reservaciones</h1>
-    </header>
+      <header>
+        <h1>Realiza tu reservación</h1>
+      </header>
       <main>
+        <article className="mt-4">
+          <h3> Llena los siguientes campos para hacer tu reservación con nosotros.</h3>
+        </article>
         <article>
           <form>
-            <div className="containermb-3 mt-5">
+            <div className="containermb-3 mt-3">
               <label htmlFor="nombre">Nombre completo</label>
               <input
                 id="nombre"
@@ -42,9 +60,36 @@ const Reservaciones = () => {
                 className="form-control"
                 value={form.nombre}
                 onChange={(e) => {
-                  setForm({ ...form, nombre: e.target.value});
+                  setForm({ ...form, nombre: e.target.value });
                 }}
-                
+              />
+            </div>
+            <div className="containermb-3">
+              <label htmlFor="fecha">Fecha</label>
+              <input
+                id="fecha"
+                type="date"
+                placeholder="mm/dd/aa"
+                autoComplete="off"
+                className="form-control"
+                value={form.fecha}
+                onChange={(e) => {
+                  setForm({ ...form, fecha: e.target.value });
+                }}
+              />
+            </div>
+            <div className="containermb-3">
+              <label htmlFor="Hora">Hora</label>
+              <input
+                id="hora"
+                type="time"
+                placeholder="hh:mm pm/am"
+                autoComplete="off"
+                className="form-control"
+                value={form.hora}
+                onChange={(e) => {
+                  setForm({ ...form, hora: e.target.value });
+                }}
               />
             </div>
             <div className="mb-3">
@@ -59,7 +104,6 @@ const Reservaciones = () => {
                 onChange={(e) => {
                   setForm({ ...form, email: e.target.value });
                 }}
-                required
               />
             </div>
             <div className="mb-3">
@@ -74,7 +118,6 @@ const Reservaciones = () => {
                 onChange={(e) => {
                   setForm({ ...form, telefono: e.target.value });
                 }}
-                required
               />
             </div>
             <div className="mb-3">
@@ -89,7 +132,6 @@ const Reservaciones = () => {
                 onChange={(e) => {
                   setForm({ ...form, comentario: e.target.value });
                 }}
-                required
               />
             </div>
           </form>
@@ -106,10 +148,42 @@ const Reservaciones = () => {
           >
             Reservar
           </button>
+          <button
+            type="button"
+            className="btn btn-info m-2"
+            onClick={obtenerReservas}
+          >
+            Ver reservaciones
+          </button>
         </article>
       </section>
       <section>
         <ModalReserva id="reservaExitosa" />
+      </section>
+      {/*Tabla*/}
+      <section>
+        <article>
+          <table className="table table-dark table-hover">
+            <thead>
+              <tr>
+                <th scope="col">Nombre</th>
+                <th scope="col">Fecha</th>
+                <th scope="col">Hora</th>
+              </tr>
+            </thead>
+            <tbody>
+              {reservas.map((obj) => {
+                return (
+                  <tr key={obj.id}>
+                    <td>{obj.nombre}</td>
+                    <td>{obj.fecha}</td>
+                    <td>{obj.hora}</td>
+                  </tr>
+                );
+              })}
+            </tbody>
+          </table>
+        </article>
       </section>
       <footer>
         <Footer />
