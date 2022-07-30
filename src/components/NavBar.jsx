@@ -9,9 +9,9 @@ const NavBar = () => {
     <nav className="navbar navbar-dark bg-dark fixed-top">
       <div className="container-fluid">
         <div>
-          <NavLink className="navbar-brand img-fluid" to="/"> Pizza Prime</NavLink>
+          <NavLink className="navbar-brand img-fluid" to="/"><h3 className='ps-5 mt-4'>Pizza Prime</h3></NavLink>
         </div>
-        <button className="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar">
+        <button className="navbar-toggler m-2 me-5" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar">
           <span className="navbar-toggler-icon" />
         </button>
         <div className="offcanvas offcanvas-end text-bg-dark" tabIndex={-1} id="offcanvasDarkNavbar" aria-labelledby="offcanvasDarkNavbarLabel">

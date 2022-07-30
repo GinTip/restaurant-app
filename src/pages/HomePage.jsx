@@ -12,7 +12,7 @@ import PizzaHorno1 from '../images/pizza-horno-1.jpg';
 const HomePage = () => {
   return (
     <>
-      <main>
+      <main className="mt-5">
         <article>
           <div id="carouselExampleCaptions" className="carousel slide d-flex justify-content-center" data-bs-ride="false">
             <div className="carousel-indicators">

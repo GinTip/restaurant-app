@@ -7,20 +7,20 @@ import Chef from '../images/chef-pizza-1.jpg';
 const AboutPage = () => {
   return (
     <>
-      <header>
+      <header className="mt-5">
         <h1>Sobre nosotros</h1>
       </header>
       <main>
         <article>
             <div className="d-flex justify-content-center align-items-center p-5">
-              <div className="col-10 col-sm-8 col-lg-6">
+              <div className="col-10 col-sm-8 col-lg-6 ms-5 me-5">
                 <img src={Chef} className="d-block mx-lg-auto img-fluid" alt="Chef" width={700} height={500} loading="lazy" />
               </div>
               <div className="col-lg-6">
                 <h1>Pizza Prime</h1>
-                <h4 className="texto">
+                <h5 className="texto">
                   Somos la cadena de restaurantes prime, exitosa e innovadora de México y para alcanzar el estándar de servicio necesario para lograrlo, mantenemos una estricta política de eficiencia, trato ético y honesto hacia nuestros clientes, proveedores, colaboradores, asociados y a la comunidad en general.
-                </h4>
+                </h5>
               </div>
             </div>
         </article>

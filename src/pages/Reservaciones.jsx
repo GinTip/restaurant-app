@@ -10,6 +10,9 @@ import {
 import Footer from '../components/Footer';
 import ModalReserva from "../components/ModalReserva";
 
+// Importacion de imagenes
+import PizzaEat from "../images/pizza-eat-1.jpg";
+
 const initialForm = {
   nombre: "",
   fecha: "",
@@ -41,12 +44,15 @@ const Reservaciones = () => {
 
   return (
     <>
-      <header>
+      <header className="mt-5">
         <h1>Realiza tu reservación</h1>
       </header>
       <main>
+        <section>
+          <img src={PizzaEat} className="img-fluid" alt="pizza-eat"/>
+        </section>
         <article className="mt-4">
-          <h3> Llena los siguientes campos para hacer tu reservación con nosotros.</h3>
+          <h4> Llena los siguientes campos para hacer tu reservación con nosotros.</h4>
         </article>
         <article>
           <form>

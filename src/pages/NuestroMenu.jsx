@@ -7,7 +7,7 @@ import Logo from '../images/logo-pizza-1.jpg';
 const NuestroMenu = () => {
   return (
     <>
-      <header>
+      <header className="mt-5">
         <h1>Próximamente</h1>
       </header>
       <main>
