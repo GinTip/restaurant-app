@@ -26,7 +26,7 @@ const Footer = () => {
                   <div className="col-2">
                     <h5 className="texto">Nosotros</h5>
                     <ul className="nav flex-column">
-                      <li className="nav-item mb-2"><NavLink to="/" className="texto nav-link p-0 text-muted">Sobre nosotros</NavLink></li>
+                      <li className="nav-item mb-2"><NavLink to="/nosotros" className="texto nav-link p-0 text-muted">Sobre nosotros</NavLink></li>
                     </ul>
                   </div>
                   <section className="col-4 offset-1">
